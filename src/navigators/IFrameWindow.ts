@@ -59,9 +59,11 @@ export class IFrameWindow extends AbstractChildWindow {
         if (this._frame) {
             if (this._frame.parentNode) {
                 this._frame.addEventListener("load", (ev) => {
-                    const frame = ev.target as HTMLIFrameElement;
-                    frame.parentNode?.removeChild(frame);
-                    void this._abort.raise(new Error("IFrame removed from DOM"));
+                    setTimeout(() => {
+                        const frame = ev.target as HTMLIFrameElement;
+                        frame.parentNode?.removeChild(frame);
+                        void this._abort.raise(new Error("IFrame removed from DOM"));
+                    }, 0);
                 }, true);
                 this._frame.contentWindow?.location.replace("about:blank");
             }
