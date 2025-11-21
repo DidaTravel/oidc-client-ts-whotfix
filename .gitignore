@@ -25,3 +25,6 @@ temp/
 
 # Jetbrains IDEs
 .idea/
+
+# .npmrc file 
+.npmrc

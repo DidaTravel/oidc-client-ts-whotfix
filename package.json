@@ -30,6 +30,7 @@
   ],
   "scripts": {
     "build": "node scripts/build.js && npm run build-types",
+    "publish": "node scripts/publish.js",
     "build-types": "tsc -p tsconfig.build.json && api-extractor run",
     "clean": "git clean -fdX dist lib *.tsbuildinfo",
     "prepack": "npm run build",
@@ -73,5 +74,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
+  },
+  "volta": {
+    "node": "20.19.0"
   }
 }
