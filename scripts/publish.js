@@ -96,7 +96,7 @@ function buildNextVersion(currentVersion) {
     }
     const parts = currentVersion.split("-hotfix.");
     if (parts[0] !== baseVersion) {
-        throw new Error(`Current latest hotfix version ${currentVersion} does not match the package base version ${baseVersion}`);
+        return baseVersion + "-hotfix.1";
     }
     const hotfixPart = parseInt(parts[1], 10);
     parts[1] = hotfixPart + 1;
